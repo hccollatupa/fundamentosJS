@@ -45,3 +45,23 @@ verdader sin importar lo que vendría desupues.
 console.log(regresaTrue() || regresaFalse());
 
 console.log('4 condiciones ', true || true || true || false); //true
+
+console.warn('Asignaciones');
+
+const soyUndefined = undefined;
+const soyNull = null;
+const soyFalso = false;
+
+const a1 = false && 'Hola mundo' && 150;
+const a2 = 'Hola' && 'mundo' && soyFalso && true; //todos deben ser true para que retorne true.
+const a3 = soyFalso || 'Ya no soy falso'; //como la primera expresión devuelve falso, se ejecuta la segunda que retorna falso.
+const a4 = soyFalso || soyUndefined || soyNull || 'Ya soy falso de nuevo' || true; //tanto "undefined" como "null" retornan falso y al retornar la variable "soyFalso" también un valor falso, devuelve el texto "Ya no soy falso de nuevo".
+const a5 = soyFalso || soyUndefined || soyNull || 'Ya soy falso de nuevo' || regresaTrue(); //
+
+console.log({ a1, a2, a3, a4, a5 });
+
+if (regresaTrue() && regresaTrue() && (true && false && true)) {
+    console.log('Hacer algo');
+} else {
+    console.log('Hacer otra cosa');
+}

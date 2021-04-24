@@ -39,24 +39,21 @@ class Persona {
     }
 }
 
-const ironman = new Persona('Tony Stark', 'Ironman', 'Yo soy Ironman.');
-const spiderman = new Persona('Peter Parker', 'Spiderman', 'Soy tu amigable vecino spiderman.');
+class Heroe extends Persona {
+    clan = 'Sin clan';
 
-//Persona._conteoInstancias = 2;
+    constructor(nombre, codigo, frase) {
+        super(nombre, codigo, frase);
+        this.clan = 'Los Avengers';
+    }
 
-//console.log(ironman);
+    quienSoy() {
+        console.log(`Soy ${this.nombre}, ${this.clan}`);
+        super.quienSoy();
+    }
+}
+
+const spiderman = new Heroe('Peter Parker', 'Spiderman', 'Soy tu amigable vecino spiderman.');
+//const spiderman = new Heroe();
+console.log(spiderman);
 spiderman.quienSoy();
-//spiderman.miFrase();
-
-spiderman.setComida = 'Pie de cereza de la tía May';
-//spiderman.comida = 'Duende verde'; //Tiene sentido porque "comida" no es una propiedad privada.
-
-//spiderman.nemesis = 'Duende Verde';//Js no arroja error por esta línea que está mal.
-
-//console.log(spiderman.getComida);
-
-//console.log(spiderman);
-
-console.log('Conteo estático', Persona._conteoInstancia);
-console.log(Persona.getConteoInstancia);
-Persona.mensaje();
